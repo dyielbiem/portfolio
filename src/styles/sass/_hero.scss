@@ -1,0 +1,81 @@
+
+.hero{
+   width: 100%;
+   display: flex;
+   flex-direction: column; 
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding: 4rem 0 4rem 0;
+   min-height: calc(100vh - 5rem);
+   gap: 0rem;
+
+   h1{
+    font-size: 1.25rem;
+    font-weight: 600;
+    
+    .name{
+      display: block;
+      font-size: 3.25rem;
+      line-height: calc(3.25rem * 1.2);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      @include gradient-text;
+    }
+   }
+
+   p{
+    width: 40ch;
+    max-width: 95%;
+   }
+
+   .btn-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2.25rem;
+
+    button{
+      font-size: 1.25rem;
+      padding: 1rem 0 1rem 0;
+      cursor: pointer;
+      border-radius: 9999px;
+      width: 12rem;
+      font-weight: 500;
+    }
+
+    .btn-resume{
+      background: var(--gradient);
+      color: var(--btn-text);
+    }
+
+    .btn-contact{
+      background-color: var(--secondary);
+      color: var(--text);
+    }
+   }
+
+   @include sm{
+    .btn-container{
+      flex-direction: row;
+    }
+  }
+
+   @include md{
+
+    h1{
+      font-size: 1.75rem;
+
+      .name{
+        font-size: 4.5rem;
+        line-height: calc(4.5rem * 1.2);
+      }
+    }
+
+    .btn-container{
+      margin-top: 2.5rem;
+    }
+   }
+
+   
+}

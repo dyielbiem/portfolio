@@ -1,0 +1,19 @@
+.footer{
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  p{
+    font-size: 1rem;
+    font-family: Outfit, sans-serif;
+
+    span{
+      @include gradient-text;
+      font-weight: 800;
+      font-family: Onest, sans-serif;
+    }
+  }
+}

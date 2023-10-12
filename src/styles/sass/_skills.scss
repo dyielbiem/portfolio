@@ -1,0 +1,100 @@
+
+$skills: (
+  html: "HTML", 
+  css: "CSS",
+  js: "Javascript",
+  ts: "Typescript",
+  tailwind: "Tailwind",
+  sass: "Sass",
+  react: "React",
+  next: "Next",
+  node: "Node",
+  express: "Express",
+  mongo: "MongoDB",
+  mysql: "MySQL",
+  python: "Python",
+  csharp: "C#",
+  java: "Java",
+  git: "Git",
+  github: "Github",
+  figma: "Figma"
+);
+
+.skills{
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  
+  .web-dev, .others{
+    border: 2px solid var(--border);
+    border-radius: 2rem;
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    background-image: var(--bg-gradient);
+    display: grid;
+    row-gap: 2.5rem;
+    column-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+    font-size: 3rem;
+    justify-items: center;
+    align-content: flex-start;
+
+    & > h3{
+      font-size: 1.75rem;
+      grid-column: 1/-1;
+      justify-self: flex-start;
+    }
+
+    div{
+      transform: scale(1);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+      &:hover{
+        transform: scale(.9);
+        cursor: pointer;
+      }
+    }
+
+    @each $key, $value in $skills{
+      .#{$key}{
+        
+        &::after{
+          content: $value;
+          position: absolute;
+          bottom: 0;
+          transform: translateY(150%);
+          left: auto;
+          font-size: 1rem;
+          text-align: center;
+          opacity: 0;
+          transition: opacity .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        }
+
+        &:hover::after{
+          opacity: 1;
+        }
+      }
+      
+      
+    }
+  }
+
+  @include md{
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+
+    .web-dev, .others{
+      border-width: 2px;
+      padding: 2rem 2rem 3rem 2rem;
+    }
+    
+    h2{
+      grid-column: 1/-1;
+    }
+  }
+}

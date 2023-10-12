@@ -1,0 +1,88 @@
+
+.further-projects{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
+  row-gap: 2rem;
+
+  .further-item{
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    background-image: var(--bg-gradient);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 2px solid var(--border);
+
+
+    .further-top{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > svg{
+        font-size: 2.25rem;
+        color: var(--accent);        
+      }
+
+      div{
+        display: flex;
+        gap: 1rem;
+        
+        svg{
+          color: var(--text);
+          font-size: 2rem;
+          cursor: pointer;
+
+          &:hover{
+            fill: var(--accent);
+          }
+        }
+      }
+    }
+
+    h3{
+      width: fit-content;
+      max-width: 90%;
+      font-size: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      @include gradient-text;
+
+      &::before{
+        content: "Further Project";
+        color: var(--text);
+        font-weight: 800;
+        font-size: 1rem;
+        font-family: Onest, sans-serif;
+      }
+    }
+
+    p{
+      max-width: 40ch;
+    }
+
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      li{
+        list-style: none;
+        border-radius: 999px;
+        border: 2px solid var(--accent);
+        padding: .5rem 1rem;
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 1rem;
+        font-family: Onest, sans-serif;
+      }
+    }
+  }
+
+  @include md{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+  }
+}

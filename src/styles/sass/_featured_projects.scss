@@ -1,0 +1,131 @@
+
+.featured-projects{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  row-gap: 2rem;
+  overflow: hidden;
+
+  .featured-item{
+    display: grid;
+    background-image: var(--bg-gradient);
+    border: 2px solid var(--secondary);
+    border-radius: 2rem;
+    padding: 2rem;
+    row-gap: 1.75rem;
+    position: relative;
+    overflow: hidden;
+
+    h3{
+      width: fit-content;
+      font-size: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0rem;
+      font-weight: 700;
+      @include gradient-text;
+
+
+      &::before{
+        content: "Featured Project";
+        font-weight: 800;
+        font-size: 1rem;
+        color: var(--text);
+        font-family: Onest, sans-serif;
+      }
+    }
+
+    p{
+      max-width: 40ch;
+    }
+
+    ul{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+
+      li{
+        list-style: none;
+        font-size: 1rem;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        border-radius: 999px;
+        padding: .5rem 1rem;
+        font-weight: 700;
+        font-family: Onest, sans-serif;
+      }
+    }
+
+    .link-container{
+      display: flex;
+      gap: 1rem;
+      
+      svg{
+        color: var(--text);
+        font-size: 2rem;
+
+        &:hover{
+          color: var(--accent);
+        }
+      }
+    }
+
+    .img-container{
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      grid-row: 2/3;
+      border-radius: 4px;
+      overflow: hidden;
+
+      img{
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        border: 1px solid var(--secondary);
+        pointer-events: none;
+      }
+    }
+    
+    @include md{
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(4, auto);
+      overflow: hidden;
+      column-gap: 2rem;
+
+      h3{
+        grid-column: 1/2;
+      }
+
+      p{
+        grid-row-start: 2;
+        grid-column: 1/2;
+      }
+
+      ul{
+        grid-row-start: 3;
+        grid-column: 1/2;
+        gap: .75rem;
+        width: 90%;
+      }
+
+      .link-container{
+        grid-row: 4/-1;
+      }
+
+      .img-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        grid-column: 2/-1;
+        grid-row: 1/-1;
+        height: 100%;
+        width: 100%; 
+        justify-self: flex-end;
+      }
+      
+    }
+  }
+}
