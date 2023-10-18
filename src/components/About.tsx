@@ -29,9 +29,9 @@ const About = () => {
           forward to the present, I have learned different modern web
           technologies such as Next.js, Tailwind CSS, Node.js, and more.
           <br /> <br />
-          Recently, I have finished my Bachelor's Degree as a Cum Laude. Now, my
-          primary focus is to gain relevant experience and further enhance my
-          skills in an actual working environment.
+          Recently, I have finished my Bachelor&apos;s Degree as a Cum Laude.
+          Now, my primary focus is to gain relevant experience and further
+          enhance my skills in an actual working environment.
         </p>
       </div>
     </section>
