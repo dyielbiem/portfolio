@@ -1,6 +1,6 @@
 import { BiLogoGithub } from "react-icons/bi";
 import { FaPuzzlePiece } from "react-icons/fa6";
-import { AiFillHome } from "react-icons/ai";
+import { GoHomeFill } from "react-icons/go";
 import Link from "next/link";
 
 interface Props {
@@ -20,6 +20,10 @@ const FurtherProject = ({
   showHome = false,
   animation,
 }: Props) => {
+  const scrollToTop = () => {
+    document.documentElement.scrollTop = 0;
+  };
+
   return (
     <div className={`further-item ${animation}`}>
       <div className="further-top">
@@ -30,7 +34,7 @@ const FurtherProject = ({
               <BiLogoGithub />
             </Link>
           )}
-          {showHome && <AiFillHome />}
+          {showHome && <GoHomeFill onClick={scrollToTop} />}
         </div>
       </div>
       <h3>{projectName}</h3>

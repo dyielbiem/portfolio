@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect } from "react";
-import { IoClose } from "react-icons/io5";
+import { AiOutlineClose } from "react-icons/ai";
 
 interface Props {
   isThisVisible: boolean;
@@ -27,11 +27,11 @@ const AsideMenu = ({ isThisVisible, setIsThisVisible }: Props) => {
   };
 
   return (
-    <aside className={`${isThisVisible ? "show-aside" : "hide-aside"}`}>
+    <aside className={`aside-menu ${isThisVisible ? "show-aside" : ""}`}>
       <div className="bg-div" onClick={closeAsideMenu}></div>
-      <div>
+      <div className="menu-content">
         <button className="btn-close" onClick={closeAsideMenu}>
-          <IoClose className="close-icon" />
+          <AiOutlineClose className="close-icon" />
         </button>
         <nav>
           <ul>

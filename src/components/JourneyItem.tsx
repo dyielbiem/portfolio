@@ -1,4 +1,4 @@
-import { IoIosArrowDropdown } from "react-icons/io";
+import { IoChevronDownOutline } from "react-icons/io5";
 
 interface Props {
   header: string;
@@ -20,7 +20,7 @@ const JourneyItem = ({
     <div className="exp-item" onClick={onClick}>
       <div className="header">
         <h4>{header}</h4>
-        <IoIosArrowDropdown
+        <IoChevronDownOutline
           className={`${isContentVisible && "rotate-180"} arrow`}
         />
       </div>

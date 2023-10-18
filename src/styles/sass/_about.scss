@@ -5,21 +5,23 @@
   row-gap: 2rem;
   column-gap: 2rem;
 
-  div{
-    display: inline-block;
-    width: 85%;
-    height: 20rem;
-    background-color: var(--primary);
+  img{
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 3/4;
     border-radius: 1.5rem;
-    align-self: center;
+    align-self: flex-start;
     justify-self: center;
+    max-width: 22rem;
   }
 
   @include md{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5fr 4fr;
 
-    div{
+    img{
       grid-column: 2/2;
+      width: 80%;
     }
 
     p{

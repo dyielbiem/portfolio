@@ -1,8 +1,7 @@
 .projects{
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 
   @import "featured_projects";
   @import "further_projects";

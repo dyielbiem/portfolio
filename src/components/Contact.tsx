@@ -1,13 +1,14 @@
 import Link from "next/link";
+import { IoIosPaperPlane } from "react-icons/io";
 
 const Contact = () => {
   return (
-    <section className="contact slide-left">
-      <h2 className="slide-down">Drop Me A Line</h2>
+    <section className="contact slide-right">
+      <h2 className="slide-down">Get In Touch</h2>
       <p className="slide-right">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-        obcaecati necessitatibus vel dolorum expedita temporibus et deleniti
-        rerum maxime aperia.
+        My inbox is always open for you. Whether you would like to say hello,
+        ask a question, or share something, just leave me a message. I am glad
+        to do my utmost to provide you an immediate response!
       </p>
       <Link
         href={"mailto:jlloydbmartinez@gmail.com"}
@@ -15,7 +16,7 @@ const Contact = () => {
         target="_blank"
         className="slide-up"
       >
-        Contact me
+        Send a message <IoIosPaperPlane />
       </Link>
     </section>
   );

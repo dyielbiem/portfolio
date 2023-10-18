@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Journey from "@/components/Journey";
+import Preloader from "@/components/Preloader";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
@@ -18,7 +19,10 @@ const Home = () => {
 
   return (
     <div className="container">
-      <Header setIsAsideVisible={setAsideVisible} />
+      <Header
+        setIsAsideVisible={setAsideVisible}
+        isAsideVisible={isAsideVisible}
+      />
       <AsideMenu
         isThisVisible={isAsideVisible}
         setIsThisVisible={setAsideVisible}
@@ -33,6 +37,7 @@ const Home = () => {
       </main>
       <Footer />
       <BackgroundTexture />
+      <Preloader />
     </div>
   );
 };

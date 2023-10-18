@@ -21,8 +21,9 @@ const Journey = () => {
         <span>02.</span>Journey
       </h2>
       <p className="sub-header slide-right">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
-        animi ea explicabo minus sequi esse.
+        This journey is still in its early stages, but it has already taught me
+        different valuable lessons and skills, and I anticipate even more that
+        lie ahead.
       </p>
       <div className="journey-container">
         <div className="exp-container slide-down">
@@ -53,7 +54,11 @@ const Journey = () => {
             location="Polytechnic University of the Philippines"
             year="2019-2023"
             isContentVisible={visibleExpItem === 1 ? true : false}
-            additionalInfo={["Cum Laude", "8x President's Lister"]}
+            additionalInfo={[
+              "Cum Laude",
+              "8x President's Lister",
+              "Dr. Pio Valenzuela Scholar",
+            ]}
             onClick={() => showExpItem(1)}
           />
           <hr />

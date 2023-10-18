@@ -10,7 +10,7 @@
   .featured-item{
     display: grid;
     background-image: var(--bg-gradient);
-    border: 2px solid var(--secondary);
+    border: 1px solid var(--secondary);
     border-radius: 2rem;
     padding: 2rem;
     row-gap: 1.75rem;
@@ -23,7 +23,7 @@
       display: flex;
       flex-direction: column;
       gap: 0rem;
-      font-weight: 700;
+      font-weight: 800;
       @include gradient-text;
 
 
@@ -32,7 +32,7 @@
         font-weight: 800;
         font-size: 1rem;
         color: var(--text);
-        font-family: Onest, sans-serif;
+        font-family: var(--secondary-font);
       }
     }
 
@@ -54,7 +54,7 @@
         border-radius: 999px;
         padding: .5rem 1rem;
         font-weight: 700;
-        font-family: Onest, sans-serif;
+        font-family: var(--primary-font);
       }
     }
 
@@ -64,7 +64,7 @@
       
       svg{
         color: var(--text);
-        font-size: 2rem;
+        font-size: 2.25rem;
 
         &:hover{
           color: var(--accent);

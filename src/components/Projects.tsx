@@ -13,7 +13,7 @@ const Projects = () => {
         <div className="featured-projects">
           <FeaturedProject
             projectName="ISKOduler"
-            projectDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi nihil voluptatem itaque sapiente amet modi minima officia"
+            projectDesc="A web application for students, particularly scholars, that helps them in managing their school schedules."
             tags={[
               "Next",
               "Typescript",
@@ -22,8 +22,8 @@ const Projects = () => {
               "Mongoose",
               "Tailwind",
             ]}
-            liveURL="https://iskoduler.vercel.app"
-            github="https://google.com"
+            liveURL="https://iskoduler.vercel.app/"
+            github="https://github.com/dyielbiem/iskoduler/"
             img={{
               src: ISKOduler,
               width: 1347,
@@ -33,7 +33,7 @@ const Projects = () => {
           />
           <FeaturedProject
             projectName="Modern Misery"
-            projectDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi nihil voluptatem itaque sapiente amet modi minima officia"
+            projectDesc="An exclusive digital platform, where anyone can express their thoughts, emotions, and viewpoints on our modern world."
             tags={[
               "React",
               "Typescript",
@@ -42,8 +42,8 @@ const Projects = () => {
               "Mongoose",
               "Tailwind",
             ]}
-            liveURL="https://modernmisery.netlify.com"
-            github="https://google.com"
+            liveURL="https://modernmisery.netlify.com/"
+            github="https://github.com/dyielbiem/modern-misery/"
             img={{
               src: ModernMisery,
               width: 1139,
@@ -56,31 +56,30 @@ const Projects = () => {
         <div className="further-projects">
           <FurtherProject
             projectName="This Portfolio"
-            projectDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi nihil voluptatem itaque sapiente amet modi minima officia"
+            projectDesc="This provides a glimpse of my background and demonstrates my qualifications, skills, and a collection of my projects."
             tags={["Next", "Sass", "Typescript"]}
-            github="https://google.com"
+            github="https://github.com/dyielbiem/portfolio/"
             showHome={true}
             animation="slide-right"
           />
           <FurtherProject
             projectName="PUP Hate Tweet Detection System"
-            projectDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi nihil voluptatem itaque sapiente amet modi minima officia"
-            tags={["Python", "Machine Learning", "NLP"]}
-            github="https://google.com"
+            projectDesc="A dedicated system for PUP that utilizes machine learning techniques to monitor hate tweets targeting official PUP Twitter pages."
+            tags={["Python", "Scikit-learn", "Gensim"]}
             animation="slide-left"
           />
           <FurtherProject
             projectName="Crimson"
-            projectDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi nihil voluptatem itaque sapiente amet modi minima officia"
+            projectDesc="An inventory management system that can be used by businesses to maintain the records and statuses of all their products."
             tags={["C#", "Winforms", "MySQL"]}
-            github="https://google.com"
+            github="https://github.com/dyielbiem/crimson/"
             animation="slide-down"
           />
           <FurtherProject
-            projectName="Paragon"
-            projectDesc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed animi nihil voluptatem itaque sapiente amet modi minima officia"
+            projectName="Inimitable Supply"
+            projectDesc="A system responsible for storing order forms that contain the transaction records between a mock business and its buyer."
             tags={["Java", "Java Swing", "MySQL"]}
-            github="https://google.com"
+            github="https://github.com/dyielbiem/inimitable-supply/"
             animation="slide-up"
           />
         </div>

@@ -1,5 +1,4 @@
 .journey{
-
   .journey-container{
     width: 100%;
     display: grid;
@@ -7,7 +6,7 @@
     row-gap: 2rem;
   
     & > div{
-      border: 2px solid var(--border);
+      border: 1px solid var(--border);
       border-radius: 2rem;
       padding: 1.5rem;
       background-image: var(--bg-gradient);
@@ -23,9 +22,9 @@
       }
   
       .exp-item{
-        padding: 1rem .5rem 1rem .5rem;
         position: relative;
         cursor: pointer;
+        padding: .5rem 0rem;
   
         & > .header{
           display: flex;
@@ -61,6 +60,7 @@
             .location{
               font-weight: 700;
               color: var(--accent);
+              line-height: 1.2;
             }
   
             ul{
@@ -74,12 +74,15 @@
                 list-style: none;
                 font-size: 1.25rem;
                 font-style: italic;
-                padding-left: 1rem;
+                font-family: var(--secondary-font);
+                padding-left: 1.25rem;
                 position: relative;
   
                 &::after{
-                  content: "•";
+                  content: "‣";
                   position: absolute;
+                  color: var(--accent);
+                  font-size: 1.25rem;
                   left: 0;
                   top: 0;
                 }
@@ -135,7 +138,6 @@
 
       .educ-container{
         animation-delay: 250ms;
-        opacity: 0;
       }
     }
   }

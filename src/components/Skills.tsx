@@ -20,8 +20,9 @@ const Skills = () => {
         <span>03.</span>Skills
       </h2>
       <p className="sub-header slide-down">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
-        animi ea explicabo minus sequi esse.
+        In recent years, I have been delving into software development,
+        particularly web development. These are the technologies I have utilized
+        for my projects.
       </p>
       <div className="skills">
         <div className="web-dev slide-right">
@@ -59,9 +60,6 @@ const Skills = () => {
           <div className="mongo">
             <SiMongodb />
           </div>
-          <div className="mysql">
-            <GrMysql />
-          </div>
         </div>
         <div className="others slide-left">
           <h3>Others</h3>
@@ -73,6 +71,9 @@ const Skills = () => {
           </div>
           <div className="java">
             <FaJava />
+          </div>
+          <div className="mysql">
+            <GrMysql />
           </div>
           <div className="git">
             <BsGit />

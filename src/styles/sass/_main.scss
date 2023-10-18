@@ -5,10 +5,6 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  @include md{
-    width: 90%;
-  }
 }
 
 @import "hero";

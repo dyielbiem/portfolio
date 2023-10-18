@@ -6,13 +6,19 @@
   gap: 1rem;
   background-image: var(--bg-gradient);
   width: 100%;
-  padding: 4rem 2rem !important;
+  padding: 3rem 2rem !important;
   margin: 6rem 0;
   border-radius: 2rem;
-  border: 2px solid var(--secondary);
+  border: 1px solid var(--secondary);
+
+  @include sm{
+    padding: 3rem 3rem !important;
+  }
 
   h2{
     @include gradient-text;
+    font-weight: 900;
+    text-align: center;
   }
 
   p{
@@ -23,12 +29,26 @@
   }
 
   a{
-    padding: 1rem 4rem;
+    padding: 1.125rem 2.25rem;
     background-image: var(--gradient);
     border-radius: 999px;
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--btn-text);
     text-decoration: none;
+    text-align: center;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+
+    svg{
+      flex-shrink: 0;
+      display: none;
+      
+      @include xs{
+        display: block;
+      }
+    }
   }
 }
