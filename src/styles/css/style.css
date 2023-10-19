@@ -15,7 +15,7 @@
   --p-color: #ffffff;
   --border: #14151f;
   --semi-transparent: #07070d88;
-  --bg-texture-opacity: 0.40;
+  --bg-texture-opacity: 0.55;
   --bg-blend-mode: luminosity;
   --gradient: linear-gradient(to left, var(--primary), var(--accent));
   --bg-gradient: radial-gradient(ellipse at top right, var(--accent) -200%, var(--background));
@@ -31,7 +31,7 @@
   --p-color: #000000;
   --border: #bfd7df;
   --semi-transparent: #eeeeeecc ;
-  --bg-texture-opacity: 0.30;
+  --bg-texture-opacity: 0.55;
   --bg-blend-mode: difference;
   --bg-gradient: radial-gradient(ellipse at top left, var(--secondary) -100%, var(--background));
   --gradient: linear-gradient(to right, var(--primary), var(--accent));
@@ -1405,17 +1405,9 @@ main {
   background-size: cover;
   background-color: var(--background);
   background-blend-mode: var(--bg-blend-mode);
-  background-position: bottom center;
+  background-position: center center;
 }
 
-@keyframes shift {
-  0% {
-    transform: translate3d(1%, 0%, 0rem);
-  }
-  100% {
-    transform: translate3d(-1%, 0%, 0rem);
-  }
-}
 .pre-loader {
   display: flex;
   justify-content: center;
