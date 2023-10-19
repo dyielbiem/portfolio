@@ -1451,7 +1451,7 @@ main {
   height: 100%;
   width: 80%;
   background-image: var(--gradient);
-  animation: animateLogo 4000ms linear infinite;
+  animation: animateLogo 5000ms linear infinite;
   position: absolute;
 }
 @keyframes animateLogo {

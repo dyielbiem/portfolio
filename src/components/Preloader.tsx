@@ -5,8 +5,10 @@ const Preloader = () => {
 
   useEffect(() => {
     if (document.readyState !== "loading") {
-      setIsWindowLoading(false);
-      document.body.style.overflow = "visible";
+      setTimeout(() => {
+        setIsWindowLoading(false);
+        document.body.style.overflow = "visible";
+      }, 5000);
     }
   }, []);
 
