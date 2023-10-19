@@ -1,12 +1,12 @@
 .slide-right{
   opacity: 0;
-  transform: translate3d(-4rem, 0rem, 0rem);
+  transform: translate3d(-3rem, 0rem, 0rem);
   transition: all 350ms ease-in-out 250ms;
 }
 
 .slide-left{
   opacity: 0;
-  transform: translate3d(4rem, 0rem, 0rem);
+  transform: translate3d(3rem, 0rem, 0rem);
   transition: all 350ms ease-in-out 250ms;
 }
 
@@ -30,7 +30,7 @@
   }
   50%{
     opacity: 0;
-    transform: translate3d(0rem, -4rem, 0rem);
+    transform: translate3d(0rem, -3rem, 0rem);
   }
   100%{
     opacity: 1;
@@ -50,7 +50,7 @@
   }
   50%{
     opacity: 0;
-    transform: translate3d(0rem, -4rem, 0rem);
+    transform: translate3d(0rem, -3rem, 0rem);
   }
   100%{
     opacity: 0;
@@ -69,7 +69,7 @@
   }
   50%{
     opacity: 0;
-    transform: translate3d(0rem, 4rem, 0rem);
+    transform: translate3d(0rem, 3rem, 0rem);
   }
   100%{
     opacity: 1;
@@ -89,7 +89,7 @@
   }
   50%{
     opacity: 0;
-    transform: translate3d(0rem, 4rem, 0rem);
+    transform: translate3d(0rem, 3rem, 0rem);
   }
   100%{
     opacity: 0;
