@@ -12,7 +12,6 @@
   --secondary: #101b31;
   --accent: #59a89a;
   --btn-text: #ffffff;
-  --p-color: #ffffff;
   --box-shadow: inset 0 0 10px 1px #24312e;
   --semi-transparent: #07070d88;
   --bg-texture-opacity: 0.55;
@@ -28,7 +27,6 @@
   --secondary: #b3c6cf;
   --accent: #1b4ea0;
   --btn-text: #f8fbfc;
-  --p-color: #000000;
   --box-shadow: 0px 7px 10px 2px #00000054;
   --semi-transparent: #eeeeeecc ;
   --bg-texture-opacity: 0.55;
@@ -128,7 +126,7 @@ p {
   line-height: 1.5;
   font-weight: 400;
   font-family: var(--secondary-font);
-  color: var(--p-color);
+  color: var(--text);
 }
 
 .sub-header {
@@ -1429,12 +1427,8 @@ main {
   aspect-ratio: 90/65;
   width: 10rem;
   height: auto;
-  -webkit-mask: url("../../assets/preloader.svg") no-repeat;
-          mask: url("../../assets/preloader.svg") no-repeat;
-  -webkit-mask-position: center center;
-          mask-position: center center;
-  -webkit-mask-size: contain;
-          mask-size: contain;
+  mask: url("../../assets/preloader.svg") center center/contain no-repeat;
+  -webkit-mask: url("../../assets/preloader.svg") center center/contain no-repeat;
   position: relative;
 }
 @media (min-width: 769px) {
