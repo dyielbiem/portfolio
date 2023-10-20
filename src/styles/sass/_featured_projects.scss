@@ -5,17 +5,15 @@
   grid-template-columns: 1fr;
   justify-content: center;
   row-gap: 2rem;
-  overflow: hidden;
 
   .featured-item{
     display: grid;
     background-image: var(--bg-gradient);
-    border: 1px solid var(--secondary);
     border-radius: 2rem;
     padding: 2rem;
     row-gap: 1.75rem;
     position: relative;
-    overflow: hidden;
+    @include box-shadow;
 
     h3{
       width: fit-content;

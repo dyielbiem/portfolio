@@ -28,7 +28,7 @@ $skills: (
   row-gap: 2rem;
   
   .web-dev, .others{
-    border: 2px solid var(--border);
+    @include box-shadow;
     border-radius: 2rem;
     padding: 1.5rem 1.5rem 3rem 1.5rem;
     background-image: var(--bg-gradient);
@@ -89,7 +89,6 @@ $skills: (
     column-gap: 2rem;
 
     .web-dev, .others{
-      border-width: 2px;
       padding: 2rem 2rem 3rem 2rem;
     }
     

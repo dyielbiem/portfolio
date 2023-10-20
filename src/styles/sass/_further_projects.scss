@@ -12,7 +12,7 @@
     background-image: var(--bg-gradient);
     padding: 2rem;
     border-radius: 2rem;
-    border: 1px solid var(--border);
+    @include box-shadow;
 
 
     .further-top{
