@@ -8,7 +8,7 @@ const Preloader = () => {
       setTimeout(() => {
         setIsWindowLoading(false);
         document.body.style.overflow = "visible";
-      }, 5000);
+      }, 3500);
     }
   }, []);
 

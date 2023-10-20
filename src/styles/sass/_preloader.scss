@@ -28,18 +28,18 @@
     
     .animation{
       height: 100%;
-      width: 80%;
+      width: 100%;
       background-image: var(--gradient);
-      animation: animateLogo 5000ms linear infinite;
+      animation: animateLogo 3000ms ease-in-out forwards;
       position: absolute;
     }
 
     @keyframes animateLogo {
       0%{
-        left: -80%;
+        left: -100%;
       }
       100%{
-        left: 180%;
+        left: 0%;
       }
     }
   }

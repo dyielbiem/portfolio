@@ -77,7 +77,7 @@ const useIntersectionObserver = () => {
 
   useEffect(() => {
     if (document.readyState !== "loading") {
-      setTimeout(observeElement, 5000);
+      setTimeout(observeElement, 3500);
     }
   }, []);
 };
