@@ -240,10 +240,9 @@ header {
   width: 100%;
   padding: 1.5rem 5%;
   display: flex;
-  height: 5rem;
+  height: 5.5rem;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
   background-color: transparent;
   backdrop-filter: blur(0rem);
   -webkit-backdrop-filter: blur(0rem);
@@ -252,7 +251,21 @@ header {
   top: 0;
   left: auto;
   right: auto;
+  overflow: hidden;
   transition: top 250ms cubic-bezier(0.39, 0.575, 0.565, 1), background-color 250ms cubic-bezier(0.39, 0.575, 0.565, 1), backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1), -webkit-backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+header .header-width-limiter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+}
+@media (min-width: 769px) {
+  header .header-width-limiter {
+    gap: 2rem;
+    max-width: 68rem;
+  }
 }
 header .logo-container {
   display: flex;
@@ -291,7 +304,7 @@ header nav ul li a {
   font-weight: 700;
   text-decoration: none;
   color: var(--p-color);
-  transition: all 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: color 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 header nav ul li a span {
   font-size: 1rem;
@@ -369,18 +382,30 @@ header .btn-menu .menu-icon {
   color: var(--text);
 }
 header .hide-btn-menu {
-  transform: scale(0.3) rotate(180deg);
+  transform: scale(0.8) rotate(180deg);
 }
 @media (min-width: 769px) {
   header {
     gap: 2.5rem;
     padding: 0rem 2.5%;
   }
+  header .logo-container > .logo {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
   header nav {
     display: inline;
   }
+  header nav ul > li {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
   header .btn-menu {
     display: none;
+  }
+  header .toggle-container {
+    transform: translateY(-2rem);
+    opacity: 0;
   }
   header .toggle-container .toggle > svg {
     font-size: 1.5rem;
@@ -400,6 +425,39 @@ header .hide-btn-menu {
   background-color: var(--semi-transparent);
   backdrop-filter: blur(0.25rem);
   -webkit-backdrop-filter: blur(0.25rem);
+}
+
+@media (min-width: 769px) {
+  .animate-header .logo-container > .logo {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 350ms ease, oapcity 350ms ease;
+  }
+  .animate-header nav > ul > li:nth-child(1) {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 250ms ease 150ms, opacity 250ms ease 150ms;
+  }
+  .animate-header nav > ul > li:nth-child(2) {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 250ms ease 300ms, opacity 250ms ease 300ms;
+  }
+  .animate-header nav > ul > li:nth-child(3) {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 250ms ease 450ms, opacity 250ms ease 450ms;
+  }
+  .animate-header nav > ul > li:nth-child(4) {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 250ms ease 600ms, opacity 250ms ease 600ms;
+  }
+  .animate-header .toggle-container {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 250ms ease 750ms, opacity 250ms ease 750ms;
+  }
 }
 
 .aside-menu {
@@ -442,11 +500,11 @@ header .hide-btn-menu {
 }
 .aside-menu .menu-content .btn-close {
   position: absolute;
-  top: 1.25rem;
+  top: 1.5rem;
   right: 5vw;
   background-color: transparent;
   cursor: pointer;
-  transform: rotateZ(-180deg) scale(0);
+  transform: rotateZ(-160deg) scale(0);
   opacity: 0;
   transition: transform 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 200ms;
 }
@@ -511,7 +569,7 @@ header .hide-btn-menu {
 .show-aside .menu-content .btn-close {
   transform: rotateZ(0deg) scale(1);
   opacity: 1;
-  transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 250ms;
+  transition: all 150ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 250ms;
 }
 
 main {
@@ -590,7 +648,7 @@ main {
   border-radius: 999999px;
   z-index: -1;
   opacity: 0;
-  transition: all 500ms ease-in-out;
+  transition: all 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .hero .btn-container button:hover::after, .hero .btn-container a:hover::after {
   opacity: 1;
@@ -1185,7 +1243,6 @@ main {
   width: 100%;
   height: auto;
   border-radius: 4px;
-  border: 1px solid var(--secondary);
   pointer-events: none;
 }
 @media (min-width: 769px) {
@@ -1375,7 +1432,7 @@ main {
   border-radius: 999999px;
   z-index: -1;
   opacity: 0;
-  transition: all 500ms ease-in-out;
+  transition: all 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .contact a:hover::after {
   opacity: 1;
@@ -1449,6 +1506,7 @@ main {
   opacity: 0;
   transform: translateY(-4rem);
   transition: all 350ms ease-in-out 300ms;
+  pointer-events: none;
 }
 
 .bg-texture {

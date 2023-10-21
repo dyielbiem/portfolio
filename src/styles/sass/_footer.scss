@@ -60,4 +60,5 @@
   opacity: 0;
   transform: translateY(-4rem);
   transition: all 350ms ease-in-out 300ms;
+  pointer-events: none;
 }

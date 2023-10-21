@@ -20,10 +20,6 @@ const FurtherProject = ({
   showHome = false,
   animation,
 }: Props) => {
-  const scrollToTop = () => {
-    document.documentElement.scrollTop = 0;
-  };
-
   return (
     <div className={`further-item ${animation}`}>
       <div className="further-top">
@@ -34,7 +30,11 @@ const FurtherProject = ({
               <BiLogoGithub />
             </Link>
           )}
-          {showHome && <GoHomeFill onClick={scrollToTop} />}
+          {showHome && (
+            <Link href="/">
+              <GoHomeFill />
+            </Link>
+          )}
         </div>
       </div>
       <h3>{projectName}</h3>

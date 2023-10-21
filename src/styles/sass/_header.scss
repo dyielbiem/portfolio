@@ -1,11 +1,11 @@
 header{
+  // opacity: 0;
   width: 100%;
   padding: 1.5rem 5%;
   display: flex;
-  height: 5rem;
+  height: 5.5rem;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
   background-color: transparent;
   backdrop-filter: blur(0rem);
   -webkit-backdrop-filter: blur(0rem);
@@ -14,10 +14,25 @@ header{
   top: 0;
   left: auto;
   right: auto;
+  overflow: hidden;
   transition: top 250ms cubic-bezier(0.39, 0.575, 0.565, 1), 
   background-color 250ms cubic-bezier(0.39, 0.575, 0.565, 1), 
   backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1), 
   -webkit-backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+
+  .header-width-limiter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+
+    @include md{
+      gap: 2rem;
+      max-width: 68rem;
+    }
+
+  }
 
   .logo-container{
     display: flex;
@@ -55,7 +70,7 @@ header{
           font-weight: 700;
           text-decoration: none;
           color: var(--p-color);
-          transition: all 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
+          transition: color 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
 
           span{
             font-size: 1rem;
@@ -151,15 +166,25 @@ header{
   }
 
   .hide-btn-menu{
-    transform: scale(0.3) rotate(180deg);
+    transform: scale(0.8) rotate(180deg);
   }
 
   @include md{
     gap: 2.5rem;
     padding: 0rem 2.5%;
 
+    .logo-container > .logo{
+      transform: translateY(-2rem);
+      opacity: 0;
+    }
+
     nav{
       display: inline;
+      
+      ul > li {
+        transform: translateY(-2rem);
+        opacity: 0;
+      }
     }
 
     .btn-menu{
@@ -167,6 +192,9 @@ header{
     }
 
     .toggle-container{
+      transform: translateY(-2rem);
+      opacity: 0;
+
       .toggle{
         & > svg {
           font-size: 1.5rem;
@@ -188,4 +216,31 @@ header{
   background-color: var(--semi-transparent);
   backdrop-filter: blur(.25rem);
   -webkit-backdrop-filter: blur(.25rem);
+}
+
+.animate-header{
+
+  @include md{  
+    .logo-container > .logo{
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform 350ms ease, oapcity 350ms ease;
+    }
+
+    nav > ul{
+      @for $item from 1 through 4{
+        & > li:nth-child(#{$item}){
+          transform: translateY(0);
+          opacity: 1;
+          transition: transform 250ms ease 150ms * $item, opacity 250ms ease 150ms * $item;
+        }
+      }    
+    }
+  
+    .toggle-container{
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform 250ms ease 150ms * 5, opacity 250ms ease 150ms * 5;
+    }
+  }
 }
