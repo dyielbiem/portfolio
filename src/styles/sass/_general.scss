@@ -7,8 +7,8 @@
 :root[data-theme="dark"]{
   --text: #ffffff;
   --background: #07070d;
-  --primary: #3a5e96;
-  --secondary: #101b31;
+  --primary: #4167a3;
+  --secondary: #192c53;
   --accent: #59a89a;
   --btn-text: #ffffff;
   --box-shadow: inset 0 0 10px 1px #24312e;
@@ -17,6 +17,7 @@
   --bg-blend-mode: luminosity;
 
   --gradient: linear-gradient(to left, var(--primary), var(--accent));
+  --border-gradient: linear-gradient(to left, var(--primary), var(--accent)) 30%;
   --bg-gradient: radial-gradient(ellipse at top right, var(--accent) -200%, var(--background));
 }
 
@@ -24,7 +25,7 @@
   --text: #07070d;
   --background: #eeeeee;
   --primary: #51b1b3;
-  --secondary: #b3c6cf;
+  --secondary: #3b6c8d;
   --accent: #1b4ea0;
   --btn-text: #f8fbfc;
   --box-shadow: 0px 7px 10px 2px #00000054;
@@ -32,7 +33,7 @@
   --bg-texture-opacity: 0.55;
   --bg-blend-mode: difference;
 
-  --bg-gradient: radial-gradient(ellipse at top left, var(--secondary) -100%, var(--background));
+  --bg-gradient: radial-gradient(ellipse at top left, var(--primary) -300%, var(--background));
   --gradient: linear-gradient(to right, var(--primary), var(--accent));
 }
 
@@ -57,6 +58,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
@@ -139,4 +141,30 @@ p{
   box-shadow: var(--box-shadow);
   -webkit-box-shadow: var(--box-shadow);
   -moz-box-shadow: var(--box-shadow);
+}
+
+@mixin button-hover{
+    position: relative;
+    border: none;
+    z-index: 1;
+    overflow: hidden;
+
+    &::after{
+      content: "";
+      position: absolute;
+      width: calc(100% + 5px);
+      height: calc(100% + 5px);
+      border: 3px solid var(--background);
+      
+      border-radius: 999999px;
+      z-index: -1;
+      opacity: 0;
+      transition: all 500ms ease-in-out; 
+    }
+
+    &:hover::after{
+      opacity: 1;
+      width: calc(100% - 12px);
+      height: calc(100% - 12px);
+    }
 }

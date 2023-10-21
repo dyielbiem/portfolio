@@ -6,23 +6,22 @@ const Hero = () => {
   return (
     <section className="hero">
       <h1 className="slide-down">
-        Hey there! I go by the name{" "}
-        <span className="name">John Lloyd Martinez</span>
+        Howdy! My name is <span className="name">John Lloyd Martinez</span>
       </h1>
       <p className="slide-up">
         I am an aspiring full-stack web developer who provides solutions infused
         with strong passion and dedication. Regardless of complexity, my firm
         commitment is to deliver high-quality works.
       </p>
-      <div className="btn-container slide-up">
-        <button className="btn-resume ">
+      <div className="btn-container">
+        <button className="btn-resume slide-up">
           Download CV <MdSimCardDownload />{" "}
         </button>
         <Link
           href={"mailto:jlloydbmartinez@gmail.com"}
           target="_blank"
           rel="noopener noreferrrer"
-          className="btn-contact "
+          className="btn-contact slide-up"
         >
           Contact me <IoIosPaperPlane />
         </Link>

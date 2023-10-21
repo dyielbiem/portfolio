@@ -28,7 +28,7 @@
   }
 
   a{
-    padding: 1.125rem 2.25rem;
+    padding: 1.25rem 2rem;
     background-image: var(--gradient);
     border-radius: 999px;
     font-size: 1.25rem;
@@ -40,6 +40,8 @@
     gap: .5rem;
     justify-content: center;
     align-items: center;
+    @include button-hover;
+
 
     svg{
       flex-shrink: 0;
@@ -50,4 +52,5 @@
       }
     }
   }
+
 }
