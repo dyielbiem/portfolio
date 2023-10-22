@@ -1,8 +1,9 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 :root {
   --primary-font: "Urbanist", sans-serif;
-  --secondary-font: "DM Sans", sans-serif;
+  --secondary-font: "Sen", sans-serif;
+  --btn-text: #f8fbfc;
 }
 
 :root[data-theme=dark] {
@@ -11,7 +12,6 @@
   --primary: #4167a3;
   --secondary: #192c53;
   --accent: #59a89a;
-  --btn-text: #ffffff;
   --box-shadow: inset 0 0 10px 1px #24312e;
   --semi-transparent: #07070d88;
   --bg-texture-opacity: 0.55;
@@ -27,7 +27,6 @@
   --primary: #51b1b3;
   --secondary: #3b6c8d;
   --accent: #1b4ea0;
-  --btn-text: #f8fbfc;
   --box-shadow: 0px 7px 10px 2px #00000054;
   --semi-transparent: #eeeeeecc ;
   --bg-texture-opacity: 0.55;
@@ -79,7 +78,7 @@ body {
 }
 @media (min-width: 769px) {
   .container {
-    max-width: none;
+    max-width: 80rem;
   }
 }
 
@@ -118,19 +117,20 @@ h2 {
   color: transparent;
   color: var(--text);
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   align-items: flex-end;
   text-align: end;
 }
 h2 span {
   font-family: var(--secondary-font);
-  font-size: 1.75rem;
-  line-height: 1.4;
+  font-size: 2rem;
+  line-height: 1.3;
   background-image: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   color: transparent;
+  font-weight: 600;
 }
 
 p {
@@ -317,8 +317,8 @@ header nav ul li a {
   transition: color 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 header nav ul li a span {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.125rem;
+  font-weight: 700;
   color: var(--accent);
   font-family: var(--secondary-font);
 }
@@ -547,12 +547,12 @@ header .hide-btn-menu {
 .aside-menu .menu-content nav ul li a {
   display: flex;
   align-items: flex-end;
-  gap: 0.75rem;
+  gap: 1rem;
   text-decoration: none;
   color: var(--p-color);
 }
 .aside-menu .menu-content nav ul li a span {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--accent);
   font-family: var(--secondary-font);
@@ -603,14 +603,13 @@ main {
 .hero h1 {
   font-size: clamp(1.25rem, 6vw, 1.5rem);
   font-weight: 600;
-  font-family: var(--secondary-font);
+  font-family: var(--primary-font);
 }
 .hero h1 .name {
   display: block;
   font-size: clamp(2.75rem, 14vw, 4rem);
   line-height: 1.1;
   font-weight: 700;
-  font-family: var(--primary-font);
   background-image: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
@@ -618,7 +617,7 @@ main {
   color: transparent;
 }
 .hero p {
-  max-width: 47ch;
+  max-width: 45rem;
   margin-bottom: 1.25rem;
 }
 .hero .btn-container {
@@ -1397,7 +1396,7 @@ main {
 }
 @media (min-width: 481px) {
   .contact {
-    padding: 3rem 3rem !important;
+    padding: 3.5rem 3rem !important;
   }
 }
 .contact h2 {
@@ -1414,7 +1413,7 @@ main {
 }
 .contact p {
   text-align: center;
-  max-width: 50ch;
+  max-width: 42rem;
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
   opacity: 0;
