@@ -18,6 +18,9 @@
     @include gradient-text;
     font-weight: 900;
     text-align: center;
+    opacity: 0;
+    transform: translateY(-3rem);
+    transition: transform 350ms ease, opacity 350ms ease;
   }
 
   p{
@@ -25,6 +28,9 @@
     max-width: 50ch;
     margin-bottom: 1.5rem;
     line-height: 1.75rem;
+    opacity: 0;
+    transform: translateX(-3rem);
+    transition: transform 350ms ease 350ms, opacity 350ms ease 350ms;
   }
 
   a{
@@ -41,6 +47,9 @@
     justify-content: center;
     align-items: center;
     @include button-hover;
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: transform 350ms ease 700ms, opacity 350ms ease 700ms;
 
 
     svg{
@@ -52,5 +61,11 @@
       }
     }
   }
+}
 
+.contact.animate-slide-up{
+  h2, p, a{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }

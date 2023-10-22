@@ -11,30 +11,23 @@
   opacity: 1;
   transform: translateY(0);
   transition: all 350ms ease-in-out 300ms;
+  pointer-events: none;
 
   a{
     text-decoration: none;
     color: var(--text);
-  }
 
-  .footer-desc{
-    font-size: 1.25rem;
-    line-height: 1.6;
-    font-family: var(--primary-font), sans-serif;
-    font-weight: 500;
-    transition: all 350ms ease-in-out;
-
-    span{
-      @include gradient-text;
-      font-weight: 700;
-    }
-    
-    &:hover{
-      transform: translateY(-.10rem);
+    & > svg{
+      transition: color 500ms ease, transform 500ms ease;
+      
+      &:hover{
+        color: var(--accent);
+        transform: translateY(-.1rem);
+      }
     }
   }
 
-  div{
+  .social-medias{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,20 +38,56 @@
     a{
       svg{
         font-size: 1.75rem;
-        transition: all 350ms ease-in-out;
+      }
+    }
 
-        &:hover{
-          color: var(--accent);
-          transform: translateY(-.10rem);
-        }
+    @for $item from 1 through 5{
+      a:nth-child(#{$item}n){
+        transform: translateY(-1rem);
+        opacity: 0;
+        transition: transform 250ms ease 150ms * ($item - 1), opacity 250ms ease 150ms * ($item - 1);
+      }
+    }
+  }
+
+  .footer-desc{
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 250ms ease 150ms * 5, transform 250ms ease 150ms * 5;
+
+    & > a{
+      font-size: 1.25rem;
+      line-height: 1.6;
+      font-family: var(--primary-font), sans-serif;
+      font-weight: 500;
+      transition: transform 250ms ease;
+      display: block;
+    
+      span{
+        @include gradient-text;
+        font-weight: 700;
+      }
+      
+      &:hover{
+        transform: translateY(-.1rem);
       }
     }
   }
 }
 
-.footer-exit{
-  opacity: 0;
-  transform: translateY(-4rem);
+.animate-footer{
   transition: all 350ms ease-in-out 300ms;
-  pointer-events: none;
+  pointer-events: all;
+
+  .social-medias{
+    a{
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+    }
+  }
+
+  .footer-desc{
+    opacity: 1;
+    transform: scale(1);
+  }
 }

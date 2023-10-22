@@ -18,7 +18,7 @@ const Footer = () => {
       const scrollPosition =
         document.documentElement.scrollTop + window.innerHeight + 10;
 
-      if (viewportHeight <= scrollPosition + 10) {
+      if (viewportHeight <= scrollPosition + 150) {
         setIsScrollAtBottom(true);
       } else {
         setIsScrollAtBottom(false);
@@ -35,7 +35,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className={`footer ${isScrollAtBottom ? "" : "footer-exit"}`}>
+    <footer className={`footer ${isScrollAtBottom ? "animate-footer" : ""}`}>
       <div className="social-medias">
         <Link
           href={"https://m.me/dyielbiem/"}
@@ -73,14 +73,15 @@ const Footer = () => {
           <FaGithub />
         </Link>
       </div>
-      <Link
-        href={"https://github.com/dyielbiem/portfolio"}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="footer-desc"
-      >
-        Designed and Developed by <span>John Lloyd Martinez</span> © 2023
-      </Link>
+      <div className="footer-desc">
+        <Link
+          href={"https://github.com/dyielbiem/portfolio"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Designed and Developed by <span>John Lloyd Martinez</span> © 2023
+        </Link>
+      </div>
     </footer>
   );
 };

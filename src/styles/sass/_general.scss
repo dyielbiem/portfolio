@@ -80,6 +80,14 @@ body{
   width: 100%;
   max-width: 80rem;
   overflow-x: hidden;
+
+  @include sm{
+    max-width: 550px;
+  }
+
+  @include md{
+    max-width: none;
+  }
 }
 
 section{

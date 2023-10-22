@@ -72,6 +72,16 @@ body {
   max-width: 80rem;
   overflow-x: hidden;
 }
+@media (min-width: 481px) {
+  .container {
+    max-width: 550px;
+  }
+}
+@media (min-width: 769px) {
+  .container {
+    max-width: none;
+  }
+}
 
 section {
   display: flex;
@@ -1398,12 +1408,18 @@ main {
   color: transparent;
   font-weight: 900;
   text-align: center;
+  opacity: 0;
+  transform: translateY(-3rem);
+  transition: transform 350ms ease, opacity 350ms ease;
 }
 .contact p {
   text-align: center;
   max-width: 50ch;
   margin-bottom: 1.5rem;
   line-height: 1.75rem;
+  opacity: 0;
+  transform: translateX(-3rem);
+  transition: transform 350ms ease 350ms, opacity 350ms ease 350ms;
 }
 .contact a {
   padding: 1.25rem 2rem;
@@ -1422,6 +1438,9 @@ main {
   border: none;
   z-index: 1;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: transform 350ms ease 700ms, opacity 350ms ease 700ms;
 }
 .contact a::after {
   content: "";
@@ -1449,6 +1468,11 @@ main {
   }
 }
 
+.contact.animate-slide-up h2, .contact.animate-slide-up p, .contact.animate-slide-up a {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 .footer {
   width: 100%;
   padding: 2rem 1.5rem;
@@ -1462,30 +1486,20 @@ main {
   opacity: 1;
   transform: translateY(0);
   transition: all 350ms ease-in-out 300ms;
+  pointer-events: none;
 }
 .footer a {
   text-decoration: none;
   color: var(--text);
 }
-.footer .footer-desc {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  font-family: var(--primary-font), sans-serif;
-  font-weight: 500;
-  transition: all 350ms ease-in-out;
+.footer a > svg {
+  transition: color 500ms ease, transform 500ms ease;
 }
-.footer .footer-desc span {
-  background-image: var(--gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  color: transparent;
-  font-weight: 700;
-}
-.footer .footer-desc:hover {
+.footer a > svg:hover {
+  color: var(--accent);
   transform: translateY(-0.1rem);
 }
-.footer div {
+.footer .social-medias {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1493,20 +1507,70 @@ main {
   width: 100%;
   max-width: 20rem;
 }
-.footer div a svg {
+.footer .social-medias a svg {
   font-size: 1.75rem;
-  transition: all 350ms ease-in-out;
 }
-.footer div a svg:hover {
-  color: var(--accent);
+.footer .social-medias a:nth-child(1n) {
+  transform: translateY(-1rem);
+  opacity: 0;
+  transition: transform 250ms ease 0ms, opacity 250ms ease 0ms;
+}
+.footer .social-medias a:nth-child(2n) {
+  transform: translateY(-1rem);
+  opacity: 0;
+  transition: transform 250ms ease 150ms, opacity 250ms ease 150ms;
+}
+.footer .social-medias a:nth-child(3n) {
+  transform: translateY(-1rem);
+  opacity: 0;
+  transition: transform 250ms ease 300ms, opacity 250ms ease 300ms;
+}
+.footer .social-medias a:nth-child(4n) {
+  transform: translateY(-1rem);
+  opacity: 0;
+  transition: transform 250ms ease 450ms, opacity 250ms ease 450ms;
+}
+.footer .social-medias a:nth-child(5n) {
+  transform: translateY(-1rem);
+  opacity: 0;
+  transition: transform 250ms ease 600ms, opacity 250ms ease 600ms;
+}
+.footer .footer-desc {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 250ms ease 750ms, transform 250ms ease 750ms;
+}
+.footer .footer-desc > a {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-family: var(--primary-font), sans-serif;
+  font-weight: 500;
+  transition: transform 250ms ease;
+  display: block;
+}
+.footer .footer-desc > a span {
+  background-image: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+.footer .footer-desc > a:hover {
   transform: translateY(-0.1rem);
 }
 
-.footer-exit {
-  opacity: 0;
-  transform: translateY(-4rem);
+.animate-footer {
   transition: all 350ms ease-in-out 300ms;
-  pointer-events: none;
+  pointer-events: all;
+}
+.animate-footer .social-medias a {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+.animate-footer .footer-desc {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .bg-texture {
