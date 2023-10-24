@@ -12,7 +12,7 @@ const About = () => {
           src={AboutImage}
           width={600}
           height={800}
-          layout="intrisic"
+          quality={100}
           alt="about-image"
         />
         <p className="slide-right">
