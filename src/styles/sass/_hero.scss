@@ -23,11 +23,11 @@
   }
 
   p {
-    max-width: 25rem;
+    max-width: 40ch;
     margin-bottom: 1.25rem;
 
     @include md {
-      max-width: 45rem;
+      max-width: 65ch;
     }
   }
 
