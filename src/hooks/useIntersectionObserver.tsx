@@ -61,7 +61,8 @@ const useIntersectionObserver = () => {
   useEffect(() => {
     observer = new IntersectionObserver(animateElement, {
       root: null,
-      rootMargin: "-2% 0px -20% 0px",
+      rootMargin: "-5% 0px -10% 0px",
+      threshold: 0.2,
     });
   }, []);
 
