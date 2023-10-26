@@ -1,4 +1,4 @@
-import { MdSimCardDownload } from "react-icons/md";
+import { BsFileEarmarkPdfFill } from "react-icons/bs";
 import { IoIosPaperPlane } from "react-icons/io";
 import Link from "next/link";
 
@@ -20,7 +20,7 @@ const Hero = () => {
           target="_blank"
           rel="noopener noreferrrer"
         >
-          Open CV <MdSimCardDownload />{" "}
+          Open CV <BsFileEarmarkPdfFill />{" "}
         </Link>
         <Link
           href={"mailto:jlloydbmartinez@gmail.com"}
