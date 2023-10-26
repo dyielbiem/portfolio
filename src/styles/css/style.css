@@ -718,7 +718,7 @@ main {
        column-gap: 2rem;
 }
 .about img {
-  width: 80%;
+  width: 70%;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
@@ -734,7 +734,7 @@ main {
   }
   .about img {
     grid-column: 2/2;
-    width: 80%;
+    width: 65%;
   }
   .about p {
     grid-column: 1/2;
