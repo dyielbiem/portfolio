@@ -1,8 +1,8 @@
-header{
+header {
   width: 100%;
   padding: 1.5rem 5%;
   display: flex;
-  height: 5.5rem;
+  height: 6rem;
   justify-content: center;
   align-items: center;
   background-color: transparent;
@@ -14,187 +14,187 @@ header{
   left: auto;
   right: auto;
   overflow: hidden;
-  transition: top 250ms cubic-bezier(0.39, 0.575, 0.565, 1), 
-  background-color 250ms cubic-bezier(0.39, 0.575, 0.565, 1), 
-  backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1), 
-  -webkit-backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: top 250ms cubic-bezier(0.39, 0.575, 0.565, 1),
+    background-color 250ms cubic-bezier(0.39, 0.575, 0.565, 1),
+    backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1),
+    -webkit-backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
 
-  .header-width-limiter{
+  .header-width-limiter {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     gap: 1.5rem;
 
-    @include md{
+    @include md {
       gap: 2rem;
       max-width: 68rem;
     }
-
   }
 
-  .logo-container{
+  .logo-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
 
-    .logo{
+    .logo {
       mask: url("../../assets/logo.svg") no-repeat;
       mask-size: contain;
       mask-position: left center;
-      height: 3rem;
+      height: 3.5rem;
       background-image: var(--gradient);
       aspect-ratio: 99/61;
     }
   }
 
-  nav{
+  nav {
     display: none;
 
-    ul{
+    ul {
       display: flex;
       gap: 2.5rem;
-  
-      li{
+
+      li {
         list-style: none;
         font-size: 1.25rem;
         font-weight: 500;
         cursor: pointer;
 
-        a{
+        a {
           display: flex;
           align-items: flex-end;
-          gap: .5rem;
+          gap: 0.5rem;
           font-weight: 700;
           text-decoration: none;
           color: var(--p-color);
           transition: color 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
 
-          span{
+          span {
             font-size: 1.125rem;
             font-weight: 700;
             color: var(--accent);
             font-family: var(--secondary-font);
           }
 
-          &:hover{
+          &:hover {
             color: var(--accent);
           }
-        }        
+        }
       }
     }
   }
 
-  .toggle-container{
+  .toggle-container {
     display: grid;
     background-color: transparent;
     color: transparent;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 
-    .toggle{
+    .toggle {
       background-color: transparent;
       cursor: pointer;
       grid-column: 1/-1;
       grid-row: 1/-1;
       opacity: 0;
-      animation: showToggle 200ms cubic-bezier(0.075, 0.82, 0.165, 1) 200ms forwards;
-  
+      animation: showToggle 200ms cubic-bezier(0.075, 0.82, 0.165, 1) 200ms
+        forwards;
+
       & > svg {
         color: var(--text);
         font-size: 2rem;
         transition: all 350ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
-        &:hover{
+        &:hover {
           color: var(--accent);
           transform: scale(1.05);
         }
       }
     }
 
-    @keyframes showToggle{
-      0%{
+    @keyframes showToggle {
+      0% {
         opacity: 0;
         transform: rotate(-270deg);
       }
-      100%{
+      100% {
         opacity: 1;
         transform: rotate(0deg);
       }
     }
 
-    .hide-toggle{
+    .hide-toggle {
       pointer-events: none;
       z-index: -1;
       opacity: 1;
       animation: hideToggle 300ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     }
-    
-    @keyframes hideToggle{
-      0%{
+
+    @keyframes hideToggle {
+      0% {
         opacity: 1;
         transform: rotate(0deg);
       }
-      50%{
+      50% {
         opacity: 1;
       }
-      100%{
+      100% {
         opacity: 0;
         transform: rotate(630deg);
       }
     }
   }
 
-  .btn-menu{
+  .btn-menu {
     background-color: transparent;
     cursor: pointer;
     transition: transform 250ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
-    &:hover{
-      .menu-icon{
+    &:hover {
+      .menu-icon {
         color: var(--accent);
       }
     }
 
-    .menu-icon{
+    .menu-icon {
       font-size: 2.5rem;
       transform: scale(-1, 1);
       color: var(--text);
     }
   }
 
-  .hide-btn-menu{
+  .hide-btn-menu {
     transform: scale(0.8) rotate(180deg);
   }
 
-  @include md{
+  @include md {
     gap: 2.5rem;
     padding: 0rem 2.5%;
 
-    .logo-container > .logo{
+    .logo-container > .logo {
       transform: translateY(-2rem);
       opacity: 0;
     }
 
-    nav{
+    nav {
       display: inline;
-      
+
       ul > li {
         transform: translateY(-2rem);
         opacity: 0;
       }
     }
 
-    .btn-menu{
+    .btn-menu {
       display: none;
     }
 
-    .toggle-container{
+    .toggle-container {
       transform: translateY(-2rem);
       opacity: 0;
 
-      .toggle{
+      .toggle {
         & > svg {
           font-size: 1.5rem;
         }
@@ -202,41 +202,41 @@ header{
     }
   }
 
-  @include lg{
+  @include lg {
     padding: 0rem 7.5%;
   }
 }
 
-.hide-header{
+.hide-header {
   top: -6rem;
 }
 
-.semi-transparent-header{
+.semi-transparent-header {
   background-color: var(--semi-transparent);
-  backdrop-filter: blur(.25rem);
-  -webkit-backdrop-filter: blur(.25rem);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
 }
 
-.animate-header{
-
-  @include md{  
-    .logo-container > .logo{
+.animate-header {
+  @include md {
+    .logo-container > .logo {
       transform: translateY(0);
       opacity: 1;
       transition: transform 350ms ease, oapcity 350ms ease;
     }
 
-    nav > ul{
-      @for $item from 1 through 4{
-        & > li:nth-child(#{$item}){
+    nav > ul {
+      @for $item from 1 through 4 {
+        & > li:nth-child(#{$item}) {
           transform: translateY(0);
           opacity: 1;
-          transition: transform 250ms ease 150ms * $item, opacity 250ms ease 150ms * $item;
+          transition: transform 250ms ease 150ms * $item,
+            opacity 250ms ease 150ms * $item;
         }
-      }    
+      }
     }
-  
-    .toggle-container{
+
+    .toggle-container {
       transform: translateY(0);
       opacity: 1;
       transition: transform 250ms ease 150ms * 5, opacity 250ms ease 150ms * 5;

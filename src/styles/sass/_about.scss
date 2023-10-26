@@ -12,7 +12,7 @@
     border-radius: 1.5rem;
     align-self: flex-start;
     justify-self: center;
-    max-width: 22rem;
+    max-width: 18rem;
   }
 
   @include md {
@@ -20,7 +20,8 @@
 
     img {
       grid-column: 2/2;
-      width: 65%;
+      width: 80%;
+      max-width: 18rem;
     }
 
     p {
