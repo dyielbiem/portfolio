@@ -33,7 +33,7 @@ const Projects = () => {
           />
           <FeaturedProject
             projectName="Modern Misery"
-            projectDesc="An exclusive digital platform, where anyone can express their thoughts, emotions, and viewpoints on our modern world."
+            projectDesc="An inclusive digital platform, where anyone can express their thoughts, emotions, and viewpoints on our modern world."
             tags={[
               "React",
               "Typescript",
@@ -42,7 +42,7 @@ const Projects = () => {
               "Mongoose",
               "Tailwind",
             ]}
-            liveURL="https://modernmisery.netlify.com/"
+            liveURL="https://modernmisery.netlify.app/"
             github="https://github.com/dyielbiem/modern-misery/"
             img={{
               src: ModernMisery,

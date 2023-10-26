@@ -22,25 +22,33 @@ const Journey = () => {
       </h2>
       <p className="sub-header slide-right">
         This journey is still in its early stages, but it has already taught me
-        different valuable lessons and skills, and I anticipate even more that
-        lie ahead.
+        valuable lessons and skills, and I anticipate more great opportunities
+        lying ahead.
       </p>
       <div className="journey-container">
         <div className="exp-container slide-down">
           <h3>Experience</h3>
           <hr />
           <JourneyItem
-            header="Web Designer and Developer Intern"
+            header="Web Design and Development Intern"
             location="My Own Eva, LLC"
             year="2022"
+            additionalInfo={[
+              "Prototyping and designing responsive web pages using Figma.",
+              "Developing the company’s websites with WordPress and CSS.",
+            ]}
             isContentVisible={visibleEducItem === 1 ? true : false}
             onClick={() => showEducItem(1)}
           />
           <hr />
           <JourneyItem
-            header="Student Trainee"
+            header="IT Student Trainee"
             location="Bureau of Internal Revenue"
             year="2019"
+            additionalInfo={[
+              "Inputting tax payer’s physical records into the computer system.",
+              "Assisting with computer-related tasks in the workplace.",
+            ]}
             isContentVisible={visibleEducItem === 2 ? true : false}
             onClick={() => showEducItem(2)}
           />
@@ -56,7 +64,7 @@ const Journey = () => {
             isContentVisible={visibleExpItem === 1 ? true : false}
             additionalInfo={[
               "Cum Laude",
-              "8x President's Lister",
+              "University Scholar (1st and 2nd Semester AY 2019 - 2023)",
               "Dr. Pio Valenzuela Scholar",
             ]}
             onClick={() => showExpItem(1)}

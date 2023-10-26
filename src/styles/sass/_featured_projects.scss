@@ -1,12 +1,11 @@
-
-.featured-projects{
+.featured-projects {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
   row-gap: 2rem;
 
-  .featured-item{
+  .featured-item {
     display: grid;
     background-image: var(--bg-gradient);
     border-radius: 2rem;
@@ -15,7 +14,7 @@
     position: relative;
     @include box-shadow;
 
-    h3{
+    h3 {
       width: fit-content;
       font-size: 1.75rem;
       display: flex;
@@ -24,8 +23,7 @@
       font-weight: 800;
       @include gradient-text;
 
-
-      &::before{
+      &::before {
         content: "Featured Project";
         font-weight: 800;
         font-size: 1rem;
@@ -34,43 +32,45 @@
       }
     }
 
-    p{
+    p {
       max-width: 40ch;
     }
 
-    ul{
+    ul {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      gap: .75rem;
+      gap: 0.75rem;
 
-      li{
+      li {
         list-style: none;
         font-size: 1rem;
         border: 2px solid var(--accent);
         color: var(--accent);
         border-radius: 999px;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         font-weight: 700;
         font-family: var(--primary-font);
       }
     }
 
-    .link-container{
+    .link-container {
       display: flex;
       gap: 1rem;
-      
-      svg{
+
+      svg {
         color: var(--text);
         font-size: 2.25rem;
+        transition: transform 350ms ease, color 350ms ease;
 
-        &:hover{
+        &:hover {
           color: var(--accent);
+          transform: translateY(-0.1rem);
         }
       }
     }
 
-    .img-container{
+    .img-container {
       position: relative;
       width: 100%;
       max-width: 500px;
@@ -78,51 +78,56 @@
       border-radius: 4px;
       overflow: hidden;
 
-      img{
+      img {
         width: 100%;
         height: auto;
         border-radius: 4px;
         pointer-events: none;
+        transition: transform 350ms ease;
       }
     }
-    
-    @include md{
+
+    a.img-container:hover > img {
+      transform: translateY(-0.25rem);
+      @include box-shadow;
+    }
+
+    @include md {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(4, auto);
       overflow: hidden;
       column-gap: 2rem;
 
-      h3{
+      h3 {
         grid-column: 1/2;
       }
 
-      p{
+      p {
         grid-row-start: 2;
         grid-column: 1/2;
       }
 
-      ul{
+      ul {
         grid-row-start: 3;
         grid-column: 1/2;
-        gap: .75rem;
+        gap: 0.75rem;
         width: 90%;
       }
 
-      .link-container{
+      .link-container {
         grid-row: 4/-1;
       }
 
-      .img-container{
+      .img-container {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         grid-column: 2/-1;
         grid-row: 1/-1;
         height: 100%;
-        width: 100%; 
+        width: 100%;
         justify-self: flex-end;
       }
-      
     }
   }
 }

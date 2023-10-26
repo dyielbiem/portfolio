@@ -1,5 +1,6 @@
 import React from "react";
-import { BiLinkExternal, BiLogoGithub } from "react-icons/bi";
+import { BiLogoGithub } from "react-icons/bi";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 
@@ -44,20 +45,37 @@ const FeaturedProject = ({
           )}
           {liveURL && (
             <Link href={liveURL} target="_target" rel="noopener noreferrer">
-              <BiLinkExternal />
+              <HiOutlineExternalLink />
             </Link>
           )}
         </div>
       )}
-      <div className="img-container">
-        <Image
-          src={img.src}
-          height={img.height}
-          width={img.width}
-          quality={100}
-          alt={`${projectName}-image`}
-        />
-      </div>
+      {liveURL ? (
+        <Link
+          href={liveURL}
+          rel="noopener noreferrer"
+          target="_blank"
+          className="img-container"
+        >
+          <Image
+            src={img.src}
+            height={img.height}
+            width={img.width}
+            quality={100}
+            alt={`${projectName}-image`}
+          />
+        </Link>
+      ) : (
+        <div className="img-container">
+          <Image
+            src={img.src}
+            height={img.height}
+            width={img.width}
+            quality={100}
+            alt={`${projectName}-image`}
+          />
+        </div>
+      )}
     </div>
   );
 };

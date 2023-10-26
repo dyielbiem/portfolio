@@ -803,11 +803,11 @@ main {
   line-height: 1.2;
 }
 .journey .journey-container > div .exp-item .wrapper > div ul {
-  padding-left: 1.25rem;
+  padding-left: 0.5rem;
   display: flex;
   flex-direction: column;
   margin-top: 0.25rem;
-  gap: 0.25rem;
+  gap: 0.5rem;
 }
 .journey .journey-container > div .exp-item .wrapper > div ul li {
   list-style: none;
@@ -1240,9 +1240,11 @@ main {
 .projects .featured-projects .featured-item .link-container svg {
   color: var(--text);
   font-size: 2.25rem;
+  transition: transform 350ms ease, color 350ms ease;
 }
 .projects .featured-projects .featured-item .link-container svg:hover {
   color: var(--accent);
+  transform: translateY(-0.1rem);
 }
 .projects .featured-projects .featured-item .img-container {
   position: relative;
@@ -1257,6 +1259,13 @@ main {
   height: auto;
   border-radius: 4px;
   pointer-events: none;
+  transition: transform 350ms ease;
+}
+.projects .featured-projects .featured-item a.img-container:hover > img {
+  transform: translateY(-0.25rem);
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
 }
 @media (min-width: 769px) {
   .projects .featured-projects .featured-item {
@@ -1332,9 +1341,11 @@ main {
   color: var(--text);
   font-size: 2.25rem;
   cursor: pointer;
+  transition: transform 350ms ease, color 350ms ease;
 }
 .projects .further-projects .further-item .further-top div svg:hover {
-  fill: var(--accent);
+  color: var(--accent);
+  transform: translateY(-0.1rem);
 }
 .projects .further-projects .further-item h3 {
   width: -moz-fit-content;
