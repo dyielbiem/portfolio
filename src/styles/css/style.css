@@ -617,8 +617,13 @@ main {
   color: transparent;
 }
 .hero p {
-  max-width: 45rem;
+  max-width: 25rem;
   margin-bottom: 1.25rem;
+}
+@media (min-width: 769px) {
+  .hero p {
+    max-width: 45rem;
+  }
 }
 .hero .btn-container {
   display: flex;
