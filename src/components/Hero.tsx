@@ -14,9 +14,14 @@ const Hero = () => {
         commitment is to deliver high-quality works.
       </p>
       <div className="btn-container">
-        <button className="btn-resume slide-up">
-          Download CV <MdSimCardDownload />{" "}
-        </button>
+        <Link
+          href={"/JohnLloydMartinez_CurriculumVitae.pdf"}
+          className="btn-resume slide-up"
+          target="_blank"
+          rel="noopener noreferrrer"
+        >
+          Open CV <MdSimCardDownload />{" "}
+        </Link>
         <Link
           href={"mailto:jlloydbmartinez@gmail.com"}
           target="_blank"

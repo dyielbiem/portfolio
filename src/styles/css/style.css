@@ -596,7 +596,7 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 7rem 0 7rem 0;
+  padding: 6.5rem 0 6.5rem 0;
   min-height: 100vh;
   gap: 1rem;
 }
@@ -632,7 +632,7 @@ main {
     flex-wrap: wrap;
   }
 }
-.hero .btn-container button, .hero .btn-container a {
+.hero .btn-container a {
   font-size: 1.25rem;
   padding: 1.25rem 2rem;
   text-decoration: none;
@@ -643,12 +643,15 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  flex: 1;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   position: relative;
   border: none;
   z-index: 1;
   overflow: hidden;
 }
-.hero .btn-container button::after, .hero .btn-container a::after {
+.hero .btn-container a::after {
   content: "";
   position: absolute;
   width: calc(100% + 5px);
@@ -659,16 +662,17 @@ main {
   opacity: 0;
   transition: all 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.hero .btn-container button:hover::after, .hero .btn-container a:hover::after {
+.hero .btn-container a:hover::after {
   opacity: 1;
   width: calc(100% - 12px);
   height: calc(100% - 12px);
 }
-.hero .btn-container button svg, .hero .btn-container a svg {
+.hero .btn-container a svg {
   display: none;
+  flex-shrink: 0;
 }
 @media (min-width: 280px) {
-  .hero .btn-container button svg, .hero .btn-container a svg {
+  .hero .btn-container a svg {
     display: block;
   }
 }
@@ -701,7 +705,7 @@ main {
   .hero .btn-container {
     gap: 1.75;
   }
-  .hero .btn-container button, .hero .btn-container a {
+  .hero .btn-container a {
     padding: 1.25rem 2.5rem;
   }
 }
