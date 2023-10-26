@@ -15,7 +15,7 @@ const Hero = () => {
       </p>
       <div className="btn-container">
         <Link
-          href={"/JohnLloydMartinez_CurriculumVitae.pdf"}
+          href={"/MartinezJohnLloyd_CurriculumVitae.pdf"}
           className="btn-resume slide-up"
           target="_blank"
           rel="noopener noreferrrer"
