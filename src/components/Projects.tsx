@@ -33,7 +33,7 @@ const Projects = () => {
           />
           <FeaturedProject
             projectName="Modern Misery"
-            projectDesc="An inclusive digital platform, where anyone can express their thoughts, emotions, and viewpoints on our modern world."
+            projectDesc="An inclusive digital platform where anyone can express their thoughts, emotions, and viewpoints on our modern world."
             tags={[
               "React",
               "Typescript",

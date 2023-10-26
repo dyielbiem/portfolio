@@ -34,8 +34,8 @@ const Journey = () => {
             location="My Own Eva, LLC"
             year="2022"
             additionalInfo={[
-              "Prototyping and designing responsive web pages using Figma.",
-              "Developing the company’s websites with WordPress and CSS.",
+              "prototyping and designing responsive web pages using Figma",
+              "developing the company’s websites with WordPress and CSS",
             ]}
             isContentVisible={visibleEducItem === 1 ? true : false}
             onClick={() => showEducItem(1)}
@@ -46,8 +46,8 @@ const Journey = () => {
             location="Bureau of Internal Revenue"
             year="2019"
             additionalInfo={[
-              "Inputting tax payer’s physical records into the computer system.",
-              "Assisting with computer-related tasks in the workplace.",
+              "inputting tax payer’s physical records into the computer system",
+              "assisting with computer-related tasks in the workplace",
             ]}
             isContentVisible={visibleEducItem === 2 ? true : false}
             onClick={() => showEducItem(2)}
