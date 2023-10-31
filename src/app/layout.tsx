@@ -4,6 +4,9 @@ import "@/styles/css/style.css";
 export const metadata: Metadata = {
   title: "John Lloyd Martinez",
   description: "Designed and developed by John Lloyd Martinez",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
