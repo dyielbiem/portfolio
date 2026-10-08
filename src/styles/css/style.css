@@ -1067,6 +1067,22 @@ main {
 .skills .others .react-native:hover::after {
   opacity: 1;
 }
+.skills .main-tech .expo::after,
+.skills .others .expo::after {
+  content: "Expo";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .expo:hover::after,
+.skills .others .expo:hover::after {
+  opacity: 1;
+}
 .skills .main-tech .vue::after,
 .skills .others .vue::after {
   content: "Vue";

@@ -4,17 +4,11 @@ import { IoLogoJavascript } from "react-icons/io5";
 import {
   FaNodeJs,
   FaPython,
-  FaJava,
   FaGithub,
   FaFigma,
   FaGitlab,
 } from "react-icons/fa";
-import {
-  BiLogoVuejs,
-  BiLogoReact,
-  BiLogoFigma,
-  BiLogoPostgresql,
-} from "react-icons/bi";
+import { BiLogoVuejs, BiLogoReact, BiLogoPostgresql } from "react-icons/bi";
 import { GrMysql } from "react-icons/gr";
 import {
   SiSass,
@@ -22,11 +16,11 @@ import {
   SiTailwindcss,
   SiExpress,
   SiMongodb,
-  SiCsharp,
   SiDjango,
   SiAmazonaws,
   SiJira,
   SiServerless,
+  SiExpo,
 } from "react-icons/si";
 
 const mainTechSkills = [
@@ -53,6 +47,10 @@ const mainTechSkills = [
   {
     className: "react-native",
     icon: BiLogoReact,
+  },
+  {
+    className: "expo",
+    icon: SiExpo,
   },
   {
     className: "vue",
