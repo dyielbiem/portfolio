@@ -27,7 +27,7 @@
 
 :root[data-theme=light] {
   --text: #07070d;
-  --background: #eeeeee;
+  --background: #dddddd;
   --primary: #51b1b3;
   --secondary: #3b6c8d;
   --accent: #1b4ea0;
@@ -289,7 +289,7 @@ header {
   left: auto;
   right: auto;
   overflow: hidden;
-  transition: top 250ms cubic-bezier(0.39, 0.575, 0.565, 1), background-color 250ms cubic-bezier(0.39, 0.575, 0.565, 1), backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1), -webkit-backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: top 250ms cubic-bezier(0.39, 0.575, 0.565, 1), background-color 250ms cubic-bezier(0.39, 0.575, 0.565, 1), backdrop-filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 header .header-width-limiter {
   display: flex;
@@ -869,6 +869,10 @@ main {
 @media (min-width: 280px) {
   .journey .journey-container > div .exp-item {
     padding: 1rem 0.5rem 1rem 2.5rem;
+    counter-increment: exp-item;
+  }
+  .journey .journey-container > div .exp-item::after {
+    content: counter(exp-item, decimal-leading-zero);
   }
   .journey .journey-container > div > div::after {
     position: absolute;
@@ -878,12 +882,6 @@ main {
     font-weight: 700;
     color: var(--accent);
     flex-shrink: 1;
-  }
-  .journey .journey-container > div > :nth-child(3)::after {
-    content: "01";
-  }
-  .journey .journey-container > div > :nth-child(5)::after {
-    content: "02";
   }
 }
 @media (min-width: 769px) {
@@ -904,7 +902,8 @@ main {
   grid-template-columns: 1fr;
   row-gap: 2rem;
 }
-.skills .web-dev, .skills .others {
+.skills .main-tech,
+.skills .others {
   box-shadow: var(--box-shadow);
   -webkit-box-shadow: var(--box-shadow);
   -moz-box-shadow: var(--box-shadow);
@@ -920,12 +919,14 @@ main {
   justify-items: center;
   align-content: flex-start;
 }
-.skills .web-dev > h3, .skills .others > h3 {
+.skills .main-tech > h3,
+.skills .others > h3 {
   font-size: 1.75rem;
   grid-column: 1/-1;
   justify-self: flex-start;
 }
-.skills .web-dev div, .skills .others div {
+.skills .main-tech div,
+.skills .others div {
   transform: scale(1);
   position: relative;
   display: flex;
@@ -933,260 +934,377 @@ main {
   align-items: center;
   transition: transform 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev div:hover, .skills .others div:hover {
-  transform: scale(0.9);
+.skills .main-tech div:hover,
+.skills .others div:hover {
+  transform: scale(0.8);
   cursor: pointer;
 }
-.skills .web-dev .html::after, .skills .others .html::after {
+.skills .main-tech .html::after,
+.skills .others .html::after {
   content: "HTML";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .html:hover::after, .skills .others .html:hover::after {
+.skills .main-tech .html:hover::after,
+.skills .others .html:hover::after {
   opacity: 1;
 }
-.skills .web-dev .css::after, .skills .others .css::after {
+.skills .main-tech .css::after,
+.skills .others .css::after {
   content: "CSS";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .css:hover::after, .skills .others .css:hover::after {
+.skills .main-tech .css:hover::after,
+.skills .others .css:hover::after {
   opacity: 1;
 }
-.skills .web-dev .js::after, .skills .others .js::after {
+.skills .main-tech .js::after,
+.skills .others .js::after {
   content: "Javascript";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .js:hover::after, .skills .others .js:hover::after {
+.skills .main-tech .js:hover::after,
+.skills .others .js:hover::after {
   opacity: 1;
 }
-.skills .web-dev .ts::after, .skills .others .ts::after {
-  content: "Typescript";
-  position: absolute;
-  bottom: 0;
-  transform: translateY(150%);
-  left: auto;
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.skills .web-dev .ts:hover::after, .skills .others .ts:hover::after {
-  opacity: 1;
-}
-.skills .web-dev .tailwind::after, .skills .others .tailwind::after {
-  content: "Tailwind";
-  position: absolute;
-  bottom: 0;
-  transform: translateY(150%);
-  left: auto;
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.skills .web-dev .tailwind:hover::after, .skills .others .tailwind:hover::after {
-  opacity: 1;
-}
-.skills .web-dev .sass::after, .skills .others .sass::after {
-  content: "Sass";
-  position: absolute;
-  bottom: 0;
-  transform: translateY(150%);
-  left: auto;
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.skills .web-dev .sass:hover::after, .skills .others .sass:hover::after {
-  opacity: 1;
-}
-.skills .web-dev .react::after, .skills .others .react::after {
-  content: "React";
-  position: absolute;
-  bottom: 0;
-  transform: translateY(150%);
-  left: auto;
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.skills .web-dev .react:hover::after, .skills .others .react:hover::after {
-  opacity: 1;
-}
-.skills .web-dev .next::after, .skills .others .next::after {
-  content: "Next";
-  position: absolute;
-  bottom: 0;
-  transform: translateY(150%);
-  left: auto;
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.skills .web-dev .next:hover::after, .skills .others .next:hover::after {
-  opacity: 1;
-}
-.skills .web-dev .node::after, .skills .others .node::after {
-  content: "Node";
-  position: absolute;
-  bottom: 0;
-  transform: translateY(150%);
-  left: auto;
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.skills .web-dev .node:hover::after, .skills .others .node:hover::after {
-  opacity: 1;
-}
-.skills .web-dev .express::after, .skills .others .express::after {
-  content: "Express";
-  position: absolute;
-  bottom: 0;
-  transform: translateY(150%);
-  left: auto;
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.skills .web-dev .express:hover::after, .skills .others .express:hover::after {
-  opacity: 1;
-}
-.skills .web-dev .mongo::after, .skills .others .mongo::after {
-  content: "MongoDB";
-  position: absolute;
-  bottom: 0;
-  transform: translateY(150%);
-  left: auto;
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-.skills .web-dev .mongo:hover::after, .skills .others .mongo:hover::after {
-  opacity: 1;
-}
-.skills .web-dev .python::after, .skills .others .python::after {
+.skills .main-tech .python::after,
+.skills .others .python::after {
   content: "Python";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .python:hover::after, .skills .others .python:hover::after {
+.skills .main-tech .python:hover::after,
+.skills .others .python:hover::after {
   opacity: 1;
 }
-.skills .web-dev .csharp::after, .skills .others .csharp::after {
-  content: "C#";
+.skills .main-tech .tailwind::after,
+.skills .others .tailwind::after {
+  content: "Tailwind";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .csharp:hover::after, .skills .others .csharp:hover::after {
+.skills .main-tech .tailwind:hover::after,
+.skills .others .tailwind:hover::after {
   opacity: 1;
 }
-.skills .web-dev .java::after, .skills .others .java::after {
-  content: "Java";
+.skills .main-tech .sass::after,
+.skills .others .sass::after {
+  content: "Sass";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .java:hover::after, .skills .others .java:hover::after {
+.skills .main-tech .sass:hover::after,
+.skills .others .sass:hover::after {
   opacity: 1;
 }
-.skills .web-dev .git::after, .skills .others .git::after {
-  content: "Git";
+.skills .main-tech .react::after,
+.skills .others .react::after {
+  content: "React";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .git:hover::after, .skills .others .git:hover::after {
+.skills .main-tech .react:hover::after,
+.skills .others .react:hover::after {
   opacity: 1;
 }
-.skills .web-dev .github::after, .skills .others .github::after {
-  content: "Github";
+.skills .main-tech .react-native::after,
+.skills .others .react-native::after {
+  content: "React Native";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .github:hover::after, .skills .others .github:hover::after {
+.skills .main-tech .react-native:hover::after,
+.skills .others .react-native:hover::after {
   opacity: 1;
 }
-.skills .web-dev .figma::after, .skills .others .figma::after {
-  content: "Figma";
+.skills .main-tech .vue::after,
+.skills .others .vue::after {
+  content: "Vue";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .figma:hover::after, .skills .others .figma:hover::after {
+.skills .main-tech .vue:hover::after,
+.skills .others .vue:hover::after {
   opacity: 1;
 }
-.skills .web-dev .mysql::after, .skills .others .mysql::after {
+.skills .main-tech .next::after,
+.skills .others .next::after {
+  content: "Next";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .next:hover::after,
+.skills .others .next:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .django::after,
+.skills .others .django::after {
+  content: "Django";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .django:hover::after,
+.skills .others .django:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .node::after,
+.skills .others .node::after {
+  content: "Node";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .node:hover::after,
+.skills .others .node:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .express::after,
+.skills .others .express::after {
+  content: "Express";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .express:hover::after,
+.skills .others .express:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .mysql::after,
+.skills .others .mysql::after {
   content: "MySQL";
   position: absolute;
   bottom: 0;
-  transform: translateY(150%);
+  transform: translateY(120%);
   left: auto;
   font-size: 1rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.skills .web-dev .mysql:hover::after, .skills .others .mysql:hover::after {
+.skills .main-tech .mysql:hover::after,
+.skills .others .mysql:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .postgres::after,
+.skills .others .postgres::after {
+  content: "PostgresSQL";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .postgres:hover::after,
+.skills .others .postgres:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .mongo::after,
+.skills .others .mongo::after {
+  content: "MongoDB";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .mongo:hover::after,
+.skills .others .mongo:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .aws::after,
+.skills .others .aws::after {
+  content: "AWS";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .aws:hover::after,
+.skills .others .aws:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .jira::after,
+.skills .others .jira::after {
+  content: "Jira";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .jira:hover::after,
+.skills .others .jira:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .git::after,
+.skills .others .git::after {
+  content: "Git";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .git:hover::after,
+.skills .others .git:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .github::after,
+.skills .others .github::after {
+  content: "Github";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .github:hover::after,
+.skills .others .github:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .gitlab::after,
+.skills .others .gitlab::after {
+  content: "Gitlab";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .gitlab:hover::after,
+.skills .others .gitlab:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .figma::after,
+.skills .others .figma::after {
+  content: "Figma";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .figma:hover::after,
+.skills .others .figma:hover::after {
+  opacity: 1;
+}
+.skills .main-tech .serverless::after,
+.skills .others .serverless::after {
+  content: "Serverless";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .serverless:hover::after,
+.skills .others .serverless:hover::after {
   opacity: 1;
 }
 @media (min-width: 769px) {
@@ -1195,7 +1313,8 @@ main {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
   }
-  .skills .web-dev, .skills .others {
+  .skills .main-tech,
+  .skills .others {
     padding: 2rem 2rem 3rem 2rem;
   }
   .skills h2 {
@@ -1485,9 +1604,6 @@ main {
   border: none;
   z-index: 1;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(3rem);
-  transition: transform 350ms ease 700ms, opacity 350ms ease 700ms;
 }
 .contact a::after {
   content: "";
@@ -1504,6 +1620,11 @@ main {
   opacity: 1;
   width: calc(100% - 12px);
   height: calc(100% - 12px);
+}
+.contact a {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: transform 350ms ease 700ms, opacity 350ms ease 700ms;
 }
 .contact a svg {
   flex-shrink: 0;

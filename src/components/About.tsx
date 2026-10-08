@@ -16,22 +16,21 @@ const About = () => {
           alt="about-image"
         />
         <p className="slide-right">
-          Hello, I am John Lloyd Martinez and I enjoy building things for the
-          web. My first exposure to software development was when I took my
-          Bachelor of Science in Computer Science at the Polytechnic University
-          of the Philippines in 2019, in which I started grasping the
-          fundamental concepts of computer programming.
+          Hello, I’m John Lloyd Martinez, a software developer with almost three
+          years of experience in web and mobile development. I enjoy building
+          applications that are responsive, functional, and focused on
+          delivering a good user experience.
           <br /> <br />
-          During my second year, I learned and practiced HTML and CSS for a
-          school project. This experience turned out to be the fuel for my web
-          development journey. Since then, I have been exploring and extending
-          my knowledge in developing responsive and dynamic websites. Fast
-          forward to the present, I have learned different modern web
-          technologies such as Next.js, Tailwind CSS, Node.js, and more.
+          My journey in software development began when I pursued a Bachelor of
+          Science in Computer Science at the Polytechnic University of the
+          Philippines in 2019, where I developed a strong foundation in
+          programming and software development.
           <br /> <br />
-          Recently, I have finished my Bachelor&apos;s Degree as a Cum Laude.
-          Now, my primary focus is to gain relevant experience and further
-          enhance my skills in an actual working environment.
+          Through my professional experience in web and mobile development, I
+          have worked with modern technologies to build applications that
+          deliver solutions to modern problems. I continue to expand my skills
+          by exploring new technologies, keeping up with modern development
+          practices, and deepening my knowledge as a developer.
         </p>
       </div>
     </section>

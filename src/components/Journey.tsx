@@ -2,15 +2,15 @@ import { useState } from "react";
 import JourneyItem from "./JourneyItem";
 
 const Journey = () => {
-  const [visibleEducItem, setVisibleEducItem] = useState<1 | 2 | undefined>(1);
-  const [visibleExpItem, setVisibleExpItem] = useState<1 | 2 | undefined>(1);
+  const [visibleEducItem, setVisibleEducItem] = useState<Number | undefined>(1);
+  const [visibleExpItem, setVisibleExpItem] = useState<Number | undefined>(1);
 
-  const showEducItem = (value: 1 | 2) => {
+  const showEducItem = (value: Number) => {
     if (value === visibleEducItem) return setVisibleEducItem(undefined);
     setVisibleEducItem(value);
   };
 
-  const showExpItem = (value: 1 | 2) => {
+  const showExpItem = (value: Number) => {
     if (value === visibleExpItem) return setVisibleExpItem(undefined);
     setVisibleExpItem(value);
   };
@@ -21,13 +21,26 @@ const Journey = () => {
         <span>02.</span>Journey
       </h2>
       <p className="sub-header slide-right">
-        This journey is still in its early stages, but it has already taught me
-        valuable lessons and skills, and I anticipate more great opportunities
-        lying ahead.
+        My journey as a developer continues to evolve, and keeps giving me
+        valuable experiences and opportunities to grow. I strive to deliver
+        quality solutions while continuously refining my skills and keeping up
+        with rapidly evolving technology.
       </p>
       <div className="journey-container">
         <div className="exp-container slide-down">
           <h3>Experience</h3>
+          <hr />
+          <JourneyItem
+            header="Software Developer"
+            location="Ethos Bytes Pty Ltd"
+            year="2024 — 2026"
+            additionalInfo={[
+              "collaborating with an Agile team to develop web and mobile applications",
+              "deploying and maintaining mobile applications in production",
+            ]}
+            isContentVisible={visibleEducItem === 1 ? true : false}
+            onClick={() => showEducItem(1)}
+          />
           <hr />
           <JourneyItem
             header="Web Design and Development Intern"
@@ -37,8 +50,8 @@ const Journey = () => {
               "prototyping and designing responsive web pages using Figma",
               "developing the company’s websites with WordPress and CSS",
             ]}
-            isContentVisible={visibleEducItem === 1 ? true : false}
-            onClick={() => showEducItem(1)}
+            isContentVisible={visibleEducItem === 2 ? true : false}
+            onClick={() => showEducItem(2)}
           />
           <hr />
           <JourneyItem
@@ -49,8 +62,8 @@ const Journey = () => {
               "inputting tax payer’s physical records into the computer system",
               "assisting with computer-related tasks in the workplace",
             ]}
-            isContentVisible={visibleEducItem === 2 ? true : false}
-            onClick={() => showEducItem(2)}
+            isContentVisible={visibleEducItem === 3 ? true : false}
+            onClick={() => showEducItem(3)}
           />
           <hr />
         </div>
@@ -60,7 +73,7 @@ const Journey = () => {
           <JourneyItem
             header="Bachelor of Science in Computer Science"
             location="Polytechnic University of the Philippines"
-            year="2019-2023"
+            year="2019 — 2023"
             isContentVisible={visibleExpItem === 1 ? true : false}
             additionalInfo={[
               "Cum Laude",
@@ -73,7 +86,7 @@ const Journey = () => {
           <JourneyItem
             header="Science, Technology, Engineering, and Mathematics"
             location="Pamantasan ng Lungsod ng Valenzuela"
-            year="2017-2019"
+            year="2017 — 2019"
             isContentVisible={visibleExpItem === 2 ? true : false}
             additionalInfo={["Academic Excellence Award - With Honors"]}
             onClick={() => showExpItem(2)}

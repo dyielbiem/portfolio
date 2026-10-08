@@ -107,6 +107,11 @@
       & > div {
         .exp-item {
           padding: 1rem 0.5rem 1rem 2.5rem;
+
+          counter-increment: exp-item;
+          &::after {
+            content: counter(exp-item, decimal-leading-zero);
+          }
         }
 
         & > div::after {
@@ -117,14 +122,6 @@
           font-weight: 700;
           color: var(--accent);
           flex-shrink: 1;
-        }
-
-        & > :nth-child(3)::after {
-          content: "01";
-        }
-
-        & > :nth-child(5)::after {
-          content: "02";
         }
       }
     }

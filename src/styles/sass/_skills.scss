@@ -1,33 +1,38 @@
-
 $skills: (
-  html: "HTML", 
+  html: "HTML",
   css: "CSS",
   js: "Javascript",
-  ts: "Typescript",
+  python: "Python",
   tailwind: "Tailwind",
   sass: "Sass",
   react: "React",
+  react-native: "React Native",
+  vue: "Vue",
   next: "Next",
+  django: "Django",
   node: "Node",
   express: "Express",
+  mysql: "MySQL",
+  postgres: "PostgresSQL",
   mongo: "MongoDB",
-  python: "Python",
-  csharp: "C#",
-  java: "Java",
+  aws: "AWS",
+  jira: "Jira",
   git: "Git",
   github: "Github",
+  gitlab: "Gitlab",
   figma: "Figma",
-  mysql: "MySQL"
+  serverless: "Serverless",
 );
 
-.skills{
+.skills {
   width: 100%;
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr;
   row-gap: 2rem;
-  
-  .web-dev, .others{
+
+  .main-tech,
+  .others {
     @include box-shadow;
     border-radius: 2rem;
     padding: 1.5rem 1.5rem 3rem 1.5rem;
@@ -40,59 +45,57 @@ $skills: (
     justify-items: center;
     align-content: flex-start;
 
-    & > h3{
+    & > h3 {
       font-size: 1.75rem;
       grid-column: 1/-1;
       justify-self: flex-start;
     }
 
-    div{
+    div {
       transform: scale(1);
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: transform .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      transition: transform 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
-      &:hover{
-        transform: scale(.9);
+      &:hover {
+        transform: scale(0.8);
         cursor: pointer;
       }
     }
 
-    @each $key, $value in $skills{
-      .#{$key}{
-        
-        &::after{
+    @each $key, $value in $skills {
+      .#{$key} {
+        &::after {
           content: $value;
           position: absolute;
           bottom: 0;
-          transform: translateY(150%);
+          transform: translateY(120%);
           left: auto;
           font-size: 1rem;
           text-align: center;
           opacity: 0;
-          transition: opacity .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+          transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
         }
 
-        &:hover::after{
+        &:hover::after {
           opacity: 1;
         }
       }
-      
-      
     }
   }
 
-  @include md{
+  @include md {
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
 
-    .web-dev, .others{
+    .main-tech,
+    .others {
       padding: 2rem 2rem 3rem 2rem;
     }
-    
-    h2{
+
+    h2 {
       grid-column: 1/-1;
     }
   }
