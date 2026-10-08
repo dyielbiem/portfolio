@@ -21,6 +21,7 @@ import {
   SiJira,
   SiServerless,
   SiExpo,
+  SiDocker,
 } from "react-icons/si";
 
 const mainTechSkills = [
@@ -98,6 +99,10 @@ const otherSkills = [
   {
     className: "aws",
     icon: SiAmazonaws,
+  },
+  {
+    className: "docker",
+    icon: SiDocker,
   },
   {
     className: "jira",

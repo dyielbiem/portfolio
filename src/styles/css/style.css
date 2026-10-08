@@ -1227,6 +1227,22 @@ main {
 .skills .others .aws:hover::after {
   opacity: 1;
 }
+.skills .main-tech .docker::after,
+.skills .others .docker::after {
+  content: "Docker";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120%);
+  left: auto;
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.skills .main-tech .docker:hover::after,
+.skills .others .docker:hover::after {
+  opacity: 1;
+}
 .skills .main-tech .jira::after,
 .skills .others .jira::after {
   content: "Jira";
